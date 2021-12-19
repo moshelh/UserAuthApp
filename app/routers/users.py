@@ -13,7 +13,6 @@ ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 @router.post("/token", response_model=Token)
 async def login_for_access_token(form_data: UserLogIn, db: Session = Depends(database.get_db)):
-    print(form_data)
     user = users.authenticate_user(db, form_data.username, form_data.password)
     if not user:
         raise HTTPException(

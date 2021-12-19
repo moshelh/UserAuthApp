@@ -7,6 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from starlette import status
 from sqlalchemy.orm import Session
+import logger
 
 import database, model, schema
 from schema import User, UserInDB, TokenData
@@ -86,5 +87,7 @@ def create(request: schema.UserInDB, db: Session):
     db.add(new_user)
     db.commit()
     db.refresh(new_user)
+
+    logger.logger(f'New user name :{request.username}', __name__, "INFO")
 
     return new_user
