@@ -7,7 +7,7 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from starlette import status
 from sqlalchemy.orm import Session
-import logger
+from . import logger
 
 import database, model, schema
 from schema import User, UserInDB, TokenData
