@@ -29,6 +29,6 @@ spec:
     spec:
       containers:
       - name: app-user
-        image: localhost:5000/user-app:1.1
+        image: localhost:5000/user-app:1.0
         ports:
         - containerPort: 80

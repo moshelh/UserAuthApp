@@ -2,7 +2,7 @@ import requests
 from datetime import datetime
 
 
-LOGGER_URL = "http://localhost:8080/log/"
+LOGGER_URL = "http://logging-server:8080/log/"
 
 
 def logger(massage : str, name: str, level: str) -> bool:
