@@ -81,6 +81,7 @@ async def get_current_active_user(current_user: User = Depends(get_current_user)
 
 
 def create(request: schema.UserInDB, db: Session):
+    print("create user")
     new_user = model.User(full_name=request.full_name, username=request.username,
                           password=str(get_password_hash(request.password)),
                           email=request.email, disabled=request.disabled)
